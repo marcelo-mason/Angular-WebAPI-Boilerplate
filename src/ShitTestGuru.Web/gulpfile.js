@@ -1,4 +1,4 @@
-﻿/// <binding Clean='clean-libs, clean-scripts, clean-styles, clean-images' ProjectOpened='watch' />
+﻿/// <binding BeforeBuild='default' Clean='clean' ProjectOpened='default, watch' />
 
 var gulp = require("gulp"),
     gutil = require("gulp-util"),
@@ -10,12 +10,12 @@ var gulp = require("gulp"),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
+    imagemin = require('gulp-imagemin'),
     browserify = require('browserify'),
     through2 = require('through2'),
     transform = require('vinyl-transform'),
-    imagemin = require('gulp-imagemin'),
-    rimraf = require("rimraf"),
     vinyl = require("vinyl"),
+    del = require('del'),
     fs = require("fs");
 
 eval("var project = " + fs.readFileSync("./project.json"));
@@ -33,23 +33,7 @@ var paths = {
     }
 };
 
-gulp.task('clean-libs', function (cb) {
-    rimraf(paths.dest.lib, cb);
-});
-
-gulp.task('clean-scripts', function (cb) {
-    rimraf(paths.dest.js, cb);
-});
-
-gulp.task('clean-styles',function(cb) {
-    rimraf(paths.dest.css, cb);
-});
-
-gulp.task('clean-images', function (cb) {
-    rimraf(paths.dest.images, cb);
-});
-
-gulp.task("libs", ['clean-libs'], function (cb) {
+gulp.task("libs", function () {
     var bower = [
         "jquery/dist/jquery.js",
         "angular/angular.js",
@@ -65,7 +49,7 @@ gulp.task("libs", ['clean-libs'], function (cb) {
     }
 });
 
-gulp.task('scripts', ['clean-scripts'], function () {
+gulp.task('scripts', function () {
     var bundler = function () {
         var b = browserify(),
             stream = through2.obj(function (file, enc, next) {
@@ -90,7 +74,7 @@ gulp.task('scripts', ['clean-scripts'], function () {
             .pipe(gulp.dest(paths.dest.js));
 });
 
-gulp.task('styles', ['clean-styles'], function () {
+gulp.task('styles', function () {
     return gulp.src(paths.sass + '**/*.scss')
         .pipe(sassify())
         .pipe(gulp.dest(paths.dest.css))
@@ -99,10 +83,18 @@ gulp.task('styles', ['clean-styles'], function () {
         .pipe(gulp.dest(paths.dest.css));
 });
 
-gulp.task('images', ['clean-images'], function () {
+gulp.task('images', function () {
     return gulp.src(paths.images + '**/*')
         .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
         .pipe(gulp.dest(paths.dest.images));
+});
+
+gulp.task('clean', function (cb) {
+    del([paths.dest.images, paths.dest.css, paths.dest.js, paths.dest.lib], cb);
+});
+
+gulp.task('default', ['clean'], function () {
+    gulp.start('styles', 'scripts', 'images');
 });
 
 gulp.task('watch', function () {

@@ -15,7 +15,7 @@
     "gulp-notify": "2.2.0",
     "gulp-cache": "0.2.9",
     "through2": "0.6.5",
-    "rimraf": "2.2.8",
+    "del": "1.1.1",
     "browserify": "10.0.0",
     "vinyl-transform": "1.0.0",
     "vinyl": "0.4.6"
