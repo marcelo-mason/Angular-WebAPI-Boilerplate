@@ -1,15 +1,21 @@
 'use strict';
 
 module.exports = {
-    
-    'styles': {
-        'src': './App/Sass/**/*.scss',
-        'dest': './wwwroot/css'
+    'libs': {
+        'src': [
+            "./node_modules/angular-material/angular-material.css"
+        ],
+        'dest': './wwwroot/lib'
     },
 
     'scripts': {
         'src': '"./App/Scripts/**/*.js',
         'dest': './wwwroot/js'
+    },
+
+    'styles': {
+        'src': './App/Sass/**/*.scss',
+        'dest': './wwwroot/css'
     },
 
     'images': {
@@ -32,13 +38,13 @@ module.exports = {
     },
 
     'gzip': {
-        'src': 'build/**/*.{html,xml,json,css,js,js.map}',
-        'dest': 'build/',
+        'src': './wwwroot/**/*.{html,xml,json,css,js,js.map}',
+        'dest': './wwwroot',
         'options': {}
     },
 
     'dist': {
-        'root': 'build'
+        'root': './wwwroot'
     },
 
     'browserify': {

@@ -1,31 +1,19 @@
 ﻿<!doctype html>
-<html lang="en" ng-app="ShitTestGuru">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Webpack & Angular</title>
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="lib/angular-material.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <div ng-controller="PracticeController">
+    <div ng-controller="MainController">
     </div>
 
-<p>Angular is working: {{1 + 1 === 2}}</p>
+    <p>Angular is working: {{1 + 1 === 2}}</p>
 
-<script src="lib/angular.js"></script>
-<script src="lib/angular-aria.js"></script>
-<script src="lib/angular-animate.js"></script>
-<script src="lib/angular-material.js"></script>
-<script src="js/bundle.js"></script>
-<script>
-
-    // Include app dependency on ngMaterial
-
-    angular.module('ShitTestGuruApp', ['ngMaterial'])
-        .controller("Practice", YourController);
-
-</script>
+    <script src="js/main.js"></script>
 </body>
 </html>  

@@ -12,4 +12,8 @@ gulp.task('watch', function() {
   gulp.watch(config.fonts.src,   ['fonts']);
   gulp.watch(config.views.watch, ['views']);
 
+  for (var i = 0; i < config.libs.src.length; i++) {
+      gulp.watch(config.libs.src[i], ['libs']);
+  }
+
 });
