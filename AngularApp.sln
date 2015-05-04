@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ShitTestGuru.Web", "src\ShitTestGuru.Web\ShitTestGuru.Web.xproj", "{8376C0C3-7B9F-48F6-A860-6270FB31C1A1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AngularApp.Web", "src\AngularApp.Web\AngularApp.Web.xproj", "{8376C0C3-7B9F-48F6-A860-6270FB31C1A1}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ShitTestGuru.Tests", "src\ShitTestGuru.Tests\ShitTestGuru.Tests.xproj", "{1284278B-4776-4507-A148-59BA9271B53F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AngularApp.Tests", "src\AngularApp.Tests\AngularApp.Tests.xproj", "{1284278B-4776-4507-A148-59BA9271B53F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{15F2D80F-8154-40BE-B24A-1AE82C1930AD}"
 EndProject

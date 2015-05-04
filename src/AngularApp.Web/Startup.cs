@@ -7,9 +7,9 @@ using Microsoft.AspNet.StaticFiles;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using ShitTestGuru.Web.Properties;
+using AngularApp.Web.Properties;
 
-namespace ShitTestGuru.Web
+namespace AngularApp.Web
 {
     public class Startup
     {

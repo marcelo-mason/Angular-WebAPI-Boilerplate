@@ -1,4 +1,4 @@
-﻿namespace ShitTestGuru.Web.Properties
+﻿namespace AngularApp.Web.Properties
 {
     public class AppSettings
     {

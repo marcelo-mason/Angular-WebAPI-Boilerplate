@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "AngularApp"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-AngularApp-45b950d4-d664-4fb5-9433-1248ae17a420;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
