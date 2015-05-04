@@ -14,7 +14,7 @@ var AppCtrl = [
         // ViewModel
         var vm = this;
         
-        vm.title = 'App';
+        vm.title = 'AppCtrl';
         vm.number = 1234;
 
         $scope.toggleSidenav = function (menuId) {
