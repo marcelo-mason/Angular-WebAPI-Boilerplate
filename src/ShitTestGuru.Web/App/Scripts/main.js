@@ -7,7 +7,6 @@ require('angular-aria');
 require('angular-animate');
 require('angular-material');
 require('angular-ui-router');
-require('./templates');
 require('./controllers/_index');
 require('./services/_index');
 require('./directives/_index');
