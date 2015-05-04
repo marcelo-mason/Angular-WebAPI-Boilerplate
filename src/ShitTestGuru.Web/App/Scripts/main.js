@@ -31,8 +31,3 @@ angular.element(document).ready(function() {
   angular.bootstrap(document, ['app']);
 
 });
-
-// Include app dependency on ngMaterial
-
-angular.module('app', ['ngMaterial'])
-    .controller("MainController", MainController);

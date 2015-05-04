@@ -5,7 +5,7 @@ var controllersModule = require('./_index');
 /**
  * @ngInject
  */
-function ExampleCtrl() {
+function MainController() {
 
   // ViewModel
   var vm = this;
@@ -15,4 +15,4 @@ function ExampleCtrl() {
 
 }
 
-controllersModule.controller('ExampleCtrl', ExampleCtrl);
+controllersModule.controller('MainController', MainController);
