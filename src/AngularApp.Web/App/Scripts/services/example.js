@@ -2,27 +2,28 @@
 
 var servicesModule = require('./_index.js');
 
-/**
- * @ngInject
- */
-function ExampleService($q, $http) {
+(function () {
 
-  var service = {};
+    function ExampleService($q, $http) {
 
-  service.get = function() {
-    var deferred = $q.defer();
+        var service = {};
 
-    $http.get('apiPath').success(function(data) {
-        deferred.resolve(data);
-    }).error(function(err, status) {
-        deferred.reject(err, status);
-    });
+        service.get = function () {
+            var deferred = $q.defer();
 
-    return deferred.promise;
-  };
+            $http.get('apiPath').success(function (data) {
+                deferred.resolve(data);
+            }).error(function (err, status) {
+                deferred.reject(err, status);
+            });
 
-  return service;
+            return deferred.promise;
+        };
 
-}
+        return service;
 
-servicesModule.service('ExampleService', ExampleService);
+    }
+
+    servicesModule.service('ExampleService', ExampleService);
+
+})();

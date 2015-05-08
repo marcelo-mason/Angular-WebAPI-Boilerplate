@@ -2,27 +2,29 @@
 
 exports.config = {
 
-  allScriptsTimeout: 11000,
+    allScriptsTimeout: 11000,
 
-  baseUrl: 'http://localhost:3000/',
+    baseUrl: 'http://localhost:1618/',
 
-  capabilities: {
-    browserName: 'chrome',
-    version: '',
-    platform: 'ANY'
-  },
+    rootElement: 'document',
 
-  framework: 'jasmine',
+    capabilities: {
+        browserName: 'chrome',
+        version: '',
+        platform: 'ANY'
+    },
 
-  jasmineNodeOpts: {
-    isVerbose: false,
-    showColors: true,
-    includeStackTrace: true,
-    defaultTimeoutInterval: 30000
-  },
+    framework: 'jasmine',
 
-  specs: [
-    'e2e/**/*.js'
-  ]
+    jasmineNodeOpts: {
+        isVerbose: false,
+        showColors: true,
+        includeStackTrace: true,
+        defaultTimeoutInterval: 30000
+    },
+
+    specs: [
+      'e2e/**/*.js'
+    ]
 
 };

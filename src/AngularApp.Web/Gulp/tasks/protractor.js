@@ -1,18 +1,16 @@
 'use strict';
 
-var gulp            = require('gulp');
-var protractor      = require('gulp-protractor').protractor;
-var webdriver       = require('gulp-protractor').webdriver;
-var webdriverUpdate = require('gulp-protractor').webdriver_update;
-var config          = require('../config');
+var config  = require('../config');
+var gulp    = require('gulp');
+var plugins = require('gulp-load-plugins')();
 
-gulp.task('webdriver-update', webdriverUpdate);
-gulp.task('webdriver', webdriver);
+gulp.task('webdriver-update', plugins.protractor.webdriver_update);
+gulp.task('webdriver', plugins.protractor.webdriver);
 
 gulp.task('protractor', ['webdriver-update', 'webdriver'], function() {
 
   return gulp.src('./Test/e2e/**/*.js')
-    .pipe(protractor({
+    .pipe(plugins.protractor.protractor({
         configFile: config.test.protractor
     }))
     .on('error', function(err) {

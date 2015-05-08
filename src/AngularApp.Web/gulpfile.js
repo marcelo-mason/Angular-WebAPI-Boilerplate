@@ -1,2 +1,2 @@
-﻿/// <binding Clean='clean' ProjectOpened='dev' />
+/// <binding BeforeBuild='build' />
 require('./gulp');

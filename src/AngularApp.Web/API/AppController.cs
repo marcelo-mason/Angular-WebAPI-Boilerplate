@@ -6,7 +6,7 @@ using Microsoft.AspNet.Mvc;
 namespace AngularApp.Web.API
 {
     [Route("api/[controller]")]
-    public class AppController : Controller
+    public class ExampleController : Controller
     {
         // GET: api/values
         [HttpGet]

@@ -5,9 +5,8 @@ var runSequence = require('run-sequence');
 
 gulp.task('dev', function (cb) {
 
-    cb = cb || function () { };
-
     global.isProd = false;
 
-    runSequence('build', 'watch', cb);
+    runSequence('clean', 'build', 'watch', cb);
+
 });

@@ -1,11 +1,17 @@
 'use strict';
 
-var config = require('../config');
-var gulp   = require('gulp');
-var del    = require('del');
+var config  = require('../config');
+var gulp    = require('gulp');
+var del     = require('del');
 
-gulp.task('clean', function(cb) {
+gulp.task('clean', function (cb) {
 
-    del([config.dist.root, '!' + config.dist.root + '/bin/**'], cb);
+    del([
+        config.styles.dest + '/**/*',
+        config.fonts.dest + '/**/*',
+        config.images.dest + '/**/*',
+        config.libs.dest + '/**/*',
+        config.scripts.dest + '/**/*'
+    ], cb);
 
 });

@@ -1,20 +1,18 @@
 'use strict';
 
-var config = require('../config');
-var gulp = require('gulp');
-var gulpif = require('gulp-if');
-var gutil = require('gulp-util');
-var source = require('vinyl-source-stream');
-var sourcemaps = require('gulp-sourcemaps');
-var buffer = require('vinyl-buffer');
-var streamify = require('gulp-streamify');
-var watchify = require('watchify');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var uglify = require('gulp-uglify');
 var handleErrors = require('../util/handleErrors');
-var debowerify = require('debowerify');
-var ngAnnotate = require('browserify-ngannotate');
+var config  = require('../config');
+var gulp    = require('gulp');
+var plugins = require('gulp-load-plugins')();
+
+var source      = require('vinyl-source-stream');
+var buffer      = require('vinyl-buffer');
+var watchify    = require('watchify');
+var browserify  = require('browserify');
+var babelify    = require('babelify');
+var debowerify  = require('debowerify');
+var ngAnnotate  = require('browserify-ngannotate');
+
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
@@ -50,16 +48,14 @@ function buildScript(file) {
         var stream = bundler.bundle();
         var createSourcemap = global.isProd && config.browserify.sourcemap;
 
-        gutil.log('Rebundle...');
-
         return stream.on('error', handleErrors)
           .pipe(source(file))
-          .pipe(gulpif(createSourcemap, buffer()))
-          .pipe(gulpif(createSourcemap, sourcemaps.init()))
-          .pipe(gulpif(global.isProd, streamify(uglify({
+          .pipe(plugins.if(createSourcemap, buffer()))
+          .pipe(plugins.if(createSourcemap, plugins.sourcemaps.init()))
+          .pipe(plugins.if(global.isProd, plugins.streamify(plugins.uglify({
               compress: { drop_console: true }
           }))))
-          .pipe(gulpif(createSourcemap, sourcemaps.write('./')))
+          .pipe(plugins.if(createSourcemap, plugins.sourcemaps.write('./')))
           .pipe(gulp.dest(config.scripts.dest));
     }
 
@@ -67,5 +63,7 @@ function buildScript(file) {
 }
 
 gulp.task('browserify', function () {
+
     return buildScript('main.js');
+
 });

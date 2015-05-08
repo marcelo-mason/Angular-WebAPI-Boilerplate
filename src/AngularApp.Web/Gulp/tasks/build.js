@@ -1,11 +1,10 @@
 ﻿'use strict';
 
-var gulp = require('gulp');
+var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 
-gulp.task('build', ['clean'], function (cb) {
+gulp.task('build', function (cb) {
 
-    cb = cb || function () { };
+    runSequence('styles', 'libs', 'images', 'fonts', 'views', 'browserify', cb);
 
-    runSequence(['libs', 'styles', 'images', 'fonts', 'views', 'browserify'], cb);
 });

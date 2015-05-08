@@ -15,7 +15,8 @@ module.exports = {
 
     'styles': {
         'src': './App/Sass/**/*.scss',
-        'dest': './wwwroot/css'
+        'dest': './wwwroot/css',
+        'sass': './wwwroot/css/sass'
     },
 
     'images': {
