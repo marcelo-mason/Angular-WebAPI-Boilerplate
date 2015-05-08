@@ -1,23 +1,22 @@
 'use strict';
 
-var handleErrors = require('../util/handleErrors');
-var config  = require('../config');
-var gulp    = require('gulp');
-var plugins = require('gulp-load-plugins')();
+var handleErrors    = require('../util/handleErrors');
+var config          = require('../config');
+var gulp            = require('gulp');
+var plugins         = require('gulp-load-plugins')();
 
-var source      = require('vinyl-source-stream');
-var buffer      = require('vinyl-buffer');
-var watchify    = require('watchify');
-var browserify  = require('browserify');
-var babelify    = require('babelify');
-var debowerify  = require('debowerify');
-var ngAnnotate  = require('browserify-ngannotate');
+var source          = require('vinyl-source-stream');
+var transform       = require('vinyl-transform');
+var buffer          = require('vinyl-buffer');
+var watchify        = require('watchify');
+var browserify      = require('browserify');
+var babelify        = require('babelify');
+var debowerify      = require('debowerify');
+var ngAnnotate      = require('browserify-ngannotate');
 
+function buildScript(file, watch) {
 
-// Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
-function buildScript(file) {
-
-    var bundler = browserify({
+    var b = browserify({
         entries: config.browserify.entries,
         debug: true,
         cache: {},
@@ -25,27 +24,29 @@ function buildScript(file) {
         fullPaths: true
     }, watchify.args);
 
-    if (!global.isProd) {
-        bundler = watchify(bundler);
-        bundler.on('update', function () {
+    if (watch) {
+        b = watchify(b);
+        b.on('update', function () {
+            plugins.util.log('Bundling...');
             rebundle();
         });
     }
 
     var transforms = [
+      'brfs',
+      'bulkify',
       babelify,
       debowerify,
-      ngAnnotate,
-      'brfs',
-      'bulkify'
+      ngAnnotate
     ];
 
     transforms.forEach(function (transform) {
-        bundler.transform(transform);
+        b.transform(transform);
     });
-
+    
     function rebundle() {
-        var stream = bundler.bundle();
+
+        var stream = b.bundle();
         var createSourcemap = global.isProd && config.browserify.sourcemap;
 
         return stream.on('error', handleErrors)
@@ -59,11 +60,14 @@ function buildScript(file) {
           .pipe(gulp.dest(config.scripts.dest));
     }
 
-    return rebundle();
+    if (!watch)
+        return rebundle();
 }
 
 gulp.task('browserify', function () {
+    return buildScript(config.browserify.bundleName, false);
+});
 
-    return buildScript('main.js');
-
+gulp.task('watchify', function () {
+    buildScript(config.browserify.bundleName, !global.isProd);
 });

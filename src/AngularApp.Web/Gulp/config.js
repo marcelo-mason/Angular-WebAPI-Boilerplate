@@ -35,6 +35,7 @@ module.exports = {
           './App/Views/**/*.html'
         ],
         'src': './App/Views/**/*.html',
+        'ext': 'html',
         'dest': './wwwroot/js'
     },
 

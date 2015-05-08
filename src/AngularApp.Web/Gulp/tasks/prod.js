@@ -3,10 +3,10 @@
 var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 
-gulp.task('prod', function (cb) {
+gulp.task('prod', ['clean'], function (cb) {
 
     global.isProd = true;
 
-    runSequence('clean', 'build', 'gzip', cb);
+    runSequence('build', 'gzip', cb);
 
 });

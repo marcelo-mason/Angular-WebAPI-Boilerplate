@@ -11,7 +11,6 @@ require('./controllers/_index');
 require('./services/_index');
 require('./directives/_index');
 
-
 var requires = [
   'ui.router',
   'templates',

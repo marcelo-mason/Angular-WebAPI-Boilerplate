@@ -16,10 +16,12 @@
     "bulkify": "^1.1.1",
     "debowerify": "^1.2.1",
     "del": "^1.1.1",
+    "event-stream": "^3.3.1",
     "gulp": "^3.8.8",
     "gulp-angular-templatecache": "^1.6.0",
     "gulp-autoprefixer": "^2.2.0",
     "gulp-changed": "^1.2.1",
+    "gulp-concat": "^2.5.2",
     "gulp-debug": "^2.0.1",
     "gulp-filter": "^2.0.2",
     "gulp-gzip": "^1.1.0",
@@ -56,6 +58,7 @@
     "uglifyify": "^3.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
     "watchify": "^3.2.1"
   },
   "scripts": {
