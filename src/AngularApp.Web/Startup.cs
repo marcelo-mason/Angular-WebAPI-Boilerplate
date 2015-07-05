@@ -81,7 +81,7 @@ namespace AngularApp.Web
             app.UseStaticFiles();
 
             // Add cookie-based authentication to the request pipeline.
-            app.UseIdentity();
+            //app.UseIdentity();
 
             // Add authentication middleware to the request pipeline. You can configure options such as Id and Secret in the ConfigureServices method.
             // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
@@ -91,7 +91,7 @@ namespace AngularApp.Web
             // app.UseTwitterAuthentication();
 
             // Add MVC to the request pipeline.
-            app.UseMvc();
+            // app.UseMvc();
         }
     }
 }

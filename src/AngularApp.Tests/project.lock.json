@@ -1843,18 +1843,22 @@
         "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Security.SecureString.dll"
       ]
     },
-    "System.Text.Encoding/4.0.0-beta-23019": {
+    "System.Text.Encoding/4.0.0-beta-23008": {
       "serviceable": false,
-      "sha": "3AKmu2GxeVRk3wrBLoZXN3EhMeToZpV9KB/fjOCJu3TXZGwT3x/GwXMK9S3giYFLppHABDuVSBM1X7/71ujf4Q==",
+      "sha": "eWxRcCYFAzd4Q64bHZBFqsugUNG7LWsuZmXUim6hDHHMvZ6HxblHizLfimF5bUhVrrXsEplZDAp8fwhMnV5g2g==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
-          "dependencies": {},
+          "dependencies": {
+            "System.Runtime": "4.0.0-beta-23008"
+          },
           "frameworkAssemblies": [],
           "runtimeAssemblies": [],
           "compileAssemblies": []
         },
         "DNXCore,Version=v5.0": {
-          "dependencies": {},
+          "dependencies": {
+            "System.Runtime": "4.0.0-beta-23008"
+          },
           "frameworkAssemblies": [],
           "runtimeAssemblies": [],
           "compileAssemblies": []
@@ -1862,14 +1866,13 @@
       },
       "files": [
         "License.rtf",
-        "System.Text.Encoding.4.0.0-beta-23019.nupkg",
-        "System.Text.Encoding.4.0.0-beta-23019.nupkg.sha512",
+        "System.Text.Encoding.4.0.0-beta-23008.nupkg",
+        "System.Text.Encoding.4.0.0-beta-23008.nupkg.sha512",
         "System.Text.Encoding.nuspec",
         "lib/net45/_._",
         "lib/win8/_._",
-        "ref/dotnet/System.Text.Encoding.dll",
+        "ref/any/System.Text.Encoding.dll",
         "ref/net45/_._",
-        "ref/netcore50/System.Text.Encoding.dll",
         "ref/win8/_._"
       ]
     },
