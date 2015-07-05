@@ -2,16 +2,23 @@
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <title>ASP.NET vNext & AngularJS</title>
+    <title>ASP.NET vNext WebAPI and AngularJS Boilerplate</title>
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="lib/angular-material.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="ExampleController">
+<body ng-controller="ExampleController as example">
+    
+    <section class="world md-whiteframe-z1">
+        <md-toolbar class="demo-toolbar md-default-theme">
+            <div class="md-toolbar-tools">
+                <h3>{{ example.title }}</h3>
+            </div>
+        </md-toolbar>
+        <p class="md-display-4">{{ example.message }}</p>
+    </section>
 
-    <p class="world">{{world}}</p>
-
-    <script src="js/main.js"></script>
+    <script src="js/bundle.js"></script>
     <script src="js/templates.js"></script>
 </body>
 </html>  

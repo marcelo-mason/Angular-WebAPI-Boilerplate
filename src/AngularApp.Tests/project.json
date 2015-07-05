@@ -2,9 +2,9 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "xunit": "2.1.0-beta1-*",
-    "xunit.runner.aspnet": "2.0.0-aspnet-beta5-10345",
-    "xunit.runner.visualstudio": "2.1.0-beta1-build1051"
+    "xunit": "2.1.0-beta3-build3029",
+    "xunit.runner.aspnet": "2.1.0.0-beta1-build60",
+    "xunit.runner.visualstudio": "2.1.0-beta3-build1069"
   },
 
   "commands": {

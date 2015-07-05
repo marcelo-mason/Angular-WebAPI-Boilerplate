@@ -6,7 +6,6 @@ var plugins = require('gulp-load-plugins')();
 
 gulp.task('watch', ['watchify'], function () {
     
-    gulp.watch(config.scripts.src, ['lint']);
     gulp.watch(config.styles.src, ['styles']);
     gulp.watch(config.images.src, ['images']);
     gulp.watch(config.fonts.src, ['fonts']);

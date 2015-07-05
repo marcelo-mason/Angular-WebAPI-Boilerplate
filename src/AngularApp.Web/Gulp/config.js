@@ -1,6 +1,11 @@
 'use strict';
 
 module.exports = {
+
+    'browserport': 3000,
+    'uiport': 3001,
+    'serverport': 3002,
+
     'libs': {
         'src': [
             "./node_modules/angular-material/angular-material.css"
@@ -51,7 +56,7 @@ module.exports = {
 
     'browserify': {
         'entries': ['./App/Scripts/main.js'],
-        'bundleName': 'main.js',
+        'bundleName': 'bundle.js',
         'sourcemap': true
     },
 
