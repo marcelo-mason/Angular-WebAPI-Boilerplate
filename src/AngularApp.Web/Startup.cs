@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Diagnostics;
-using Microsoft.AspNet.Diagnostics.Entity;
+﻿using AngularApp.IdentityServer.Config;
+using AngularApp.IdentityServer.Infrastructure;
+using AngularApp.Web.Properties;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.StaticFiles;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using AngularApp.Web.Properties;
 
 namespace AngularApp.Web
 {
@@ -30,8 +28,8 @@ namespace AngularApp.Web
             configuration.AddEnvironmentVariables();
             Configuration = configuration;
         }
+
         public IConfiguration Configuration { get; set; }
-        // This method gets called by the runtime. Use this method to add services to the container.
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -58,40 +56,10 @@ namespace AngularApp.Web
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
-            // Configure the HTTP request pipeline.
-
-            // Add the console logger.
-            loggerfactory.AddConsole(minLevel: LogLevel.Warning);
-
-            // Add the following to the request pipeline only in development environment.
-            if (env.IsEnvironment("Development"))
-            {
-                app.UseBrowserLink();
-                app.UseErrorPage(ErrorPageOptions.ShowAll);
-                app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
-            }
-            else
-            {
-                // Add Error handling middleware which catches all application specific errors and
-                // sends the request to the following path or controller action.
-                app.UseErrorHandler("/Home/Error");
-            }
+            IdentityServerStartup.Configure(app, env, loggerfactory);
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
-
-            // Add cookie-based authentication to the request pipeline.
-            //app.UseIdentity();
-
-            // Add authentication middleware to the request pipeline. You can configure options such as Id and Secret in the ConfigureServices method.
-            // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
-            // app.UseFacebookAuthentication();
-            // app.UseGoogleAuthentication();
-            // app.UseMicrosoftAccountAuthentication();
-            // app.UseTwitterAuthentication();
-
-            // Add MVC to the request pipeline.
-            // app.UseMvc();
         }
     }
 }
