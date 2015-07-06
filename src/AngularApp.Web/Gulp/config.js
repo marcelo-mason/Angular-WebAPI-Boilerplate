@@ -2,9 +2,31 @@
 
 module.exports = {
 
-    'browserport': 3000,
-    'uiport': 3001,
-    'serverport': 1618,
+    'browserSync': {
+        'browserport': 3000,
+        'uiport': 3001,
+        'serverport': 1618,
+        'watch': [
+          './wwwroot/**/*'
+        ]
+    },
+
+    'browserify': {
+        'entries': ['./App/Scripts/main.js'],
+        'bundleName': 'bundle.js',
+        'sourcemap': true
+    },
+    
+    'views': {
+        'watch': [
+          './App/index.html',
+          './App/Views/**/*.html'
+        ],
+        'index': './App/index.html',
+        'src': './App/Views/**/*.html',
+        'ext': 'html',
+        'dest': './wwwroot/js'
+    },
 
     'libs': {
         'src': [
@@ -34,16 +56,6 @@ module.exports = {
         'dest': './wwwroot/fonts'
     },
 
-    'views': {
-        'watch': [
-          './App/index.html',
-          './App/Views/**/*.html'
-        ],
-        'src': './App/Views/**/*.html',
-        'ext': 'html',
-        'dest': './wwwroot/js'
-    },
-
     'gzip': {
         'src': './wwwroot/**/*.{html,xml,json,css,js,js.map}',
         'dest': './wwwroot',
@@ -52,12 +64,6 @@ module.exports = {
 
     'dist': {
         'root': './wwwroot'
-    },
-
-    'browserify': {
-        'entries': ['./App/Scripts/main.js'],
-        'bundleName': 'bundle.js',
-        'sourcemap': true
     },
 
     'test': {

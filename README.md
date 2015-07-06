@@ -15,10 +15,11 @@ Task  | Description
 dev | Cleans *wwwroot*, runs the `build` task to populate it, then starts the `watch` task for on the fly updates
 prod | Cleans *wwwroot*, runs the `build` task to populate it, then runs `gzip` task
 unit | Runs karma unit tests
-watch (internal) | Watches for changes in *App/Sass*, *App/Images*, *App/Fonts*, *App/Views*, and *App/home.html* and runs their respective tasks copying them to *wwwroot*, runs `watchify` task to monitor scripts
+watch (internal) | Watches for changes in *App/Sass*, *App/Images*, *App/Fonts*, *App/Views*, and *App/home.html* and runs their respective tasks copying them to *wwwroot*, runs `watchify` task to monitor scripts and `browserSync`
 watchify (internal) | Watches for *App/Scripts/main.js* changes (and its required dependencies) and rebundles on the fly
 build (internal) | Runs `styles`, `libs`, `images`, `fonts`, `views`, and `browserify` tasks
 browserify (internal) | Bundles all required dependencies in *App/Scripts/main.js* into *wwwroot/js/bundle.js* applying transforms such as ngannotate (AngularJS dependency injection), babelfy (ES6, JSX support)
+browserSync (internal) | Enables BrowserSync integration for live updates and syncing across multiple browsers
 fonts (internal) | Copies *App/Fonts* to *wwwroot/fonts*
 images (internal) | Copies *App/Images* to *wwwroot/images*, running imagemin on them in the process
 libs (internal) | Copies files defined in *config.js* from *node_modules* to *wwwroot/lib*

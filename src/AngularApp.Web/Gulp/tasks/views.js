@@ -7,7 +7,7 @@ var plugins = require('gulp-load-plugins')();
 // Views task
 gulp.task('views', function () {
     
-    gulp.src('App/index.html')
+    gulp.src(config.views.index)
       .pipe(gulp.dest(config.dist.root));
 
     return gulp.src(config.views.src)

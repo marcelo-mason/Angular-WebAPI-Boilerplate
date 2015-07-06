@@ -1,2 +1,2 @@
-/// <binding AfterBuild='build' />
+/// <binding AfterBuild='dev' />
 require('./gulp');

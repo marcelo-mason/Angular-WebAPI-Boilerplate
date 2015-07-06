@@ -4,7 +4,6 @@ var handleErrors    = require('../util/handleErrors');
 var config          = require('../config');
 var gulp            = require('gulp');
 var plugins         = require('gulp-load-plugins')();
-
 var source          = require('vinyl-source-stream');
 var transform       = require('vinyl-transform');
 var buffer          = require('vinyl-buffer');
@@ -14,9 +13,9 @@ var babelify        = require('babelify');
 var debowerify      = require('debowerify');
 var ngAnnotate      = require('browserify-ngannotate');
 
-function buildScript(file, watch) {
+function buildScript(watch) {
 
-    var b = browserify({
+    var bundler = browserify({
         entries: config.browserify.entries,
         debug: true,
         cache: {},
@@ -25,8 +24,8 @@ function buildScript(file, watch) {
     }, watchify.args);
 
     if (watch) {
-        b = watchify(b);
-        b.on('update', function () {
+        bundler = watchify(bundler);
+        bundler.on('update', function () {
             plugins.util.log('Bundling...');
             rebundle();
         });
@@ -41,16 +40,14 @@ function buildScript(file, watch) {
     ];
 
     transforms.forEach(function (transform) {
-        b.transform(transform);
+        bundler.transform(transform);
     });
     
     function rebundle() {
-
-        var stream = b.bundle();
         var createSourcemap = global.isProd && config.browserify.sourcemap;
 
-        return stream.on('error', handleErrors)
-          .pipe(source(file))
+        return bundler.bundle().on('error', handleErrors)
+          .pipe(source(config.browserify.bundleName))
           .pipe(plugins.if(createSourcemap, buffer()))
           .pipe(plugins.if(createSourcemap, plugins.sourcemaps.init()))
           .pipe(plugins.if(global.isProd, plugins.streamify(plugins.uglify({
@@ -59,15 +56,13 @@ function buildScript(file, watch) {
           .pipe(plugins.if(createSourcemap, plugins.sourcemaps.write('./')))
           .pipe(gulp.dest(config.scripts.dest));
     }
-
-    if (!watch)
-        return rebundle();
+    return rebundle();
 }
 
 gulp.task('browserify', function () {
-    return buildScript(config.browserify.bundleName, false);
+    return buildScript(false);
 });
 
 gulp.task('watchify', function () {
-    buildScript(config.browserify.bundleName, !global.isProd);
+    buildScript(!global.isProd);
 });
