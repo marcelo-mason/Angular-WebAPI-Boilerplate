@@ -7,7 +7,7 @@ using Microsoft.AspNet.DataProtection;
 using Microsoft.Framework.DependencyInjection;
 using Owin;
 
-namespace AngularApp.Web.Infrastructure
+namespace AngularApp.IdentityServer.Infrastructure
 {
     using DataProtectionProviderDelegate = Func<string[], Tuple<Func<byte[], byte[]>, Func<byte[], byte[]>>>;
     using DataProtectionTuple = Tuple<Func<byte[], byte[]>, Func<byte[], byte[]>>;

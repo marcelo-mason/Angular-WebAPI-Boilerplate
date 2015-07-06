@@ -7,6 +7,7 @@
       "EntityFramework.SqlServer >= 7.0.0-beta4",
       "IdentityModel >= 1.0.0-beta4",
       "IdentityServer3 >= 2.0.0-rc1",
+      "IdentityServer3.EntityFramework >= 2.0.0-rc1",
       "Microsoft.AspNet.Authentication.OAuthBearer >= 1.0.0-beta4",
       "Microsoft.AspNet.Diagnostics >= 1.0.0-beta4",
       "Microsoft.AspNet.Diagnostics.Entity >= 1.0.0-beta4",

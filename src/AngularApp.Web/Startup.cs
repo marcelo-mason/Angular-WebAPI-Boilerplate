@@ -33,6 +33,8 @@ namespace AngularApp.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDataProtection();
+
             // Add Application settings to the services container.
             services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
 

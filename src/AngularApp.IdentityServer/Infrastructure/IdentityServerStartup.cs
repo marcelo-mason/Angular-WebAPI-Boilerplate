@@ -1,5 +1,5 @@
 ﻿using AngularApp.IdentityServer.Config;
-using AngularApp.Web.Infrastructure;
+using AngularApp.IdentityServer.Config.Factory;
 using IdentityServer3.Core.Configuration;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;

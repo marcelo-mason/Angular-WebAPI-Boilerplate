@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using IdentityServer3.Core.Services.InMemory;
 
-namespace AngularApp.IdentityServer.Config
+namespace AngularApp.IdentityServer.Config.Factory
 {
     public static class Users
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using IdentityServer3.Core.Models;
 
-namespace AngularApp.IdentityServer.Config
+namespace AngularApp.IdentityServer.Config.Factory
 {
     public static class Clients
     {
