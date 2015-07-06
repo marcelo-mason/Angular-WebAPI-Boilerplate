@@ -1,20 +1,20 @@
-﻿using AngularApp.IdentityServer.Config;
-using AngularApp.IdentityServer.Infrastructure;
+﻿using AngularApp.IdentityServer.Infrastructure;
 using AngularApp.Web.Properties;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Microsoft.Framework.Runtime;
 
 namespace AngularApp.Web
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-            var configuration = new Configuration()
+            var configuration = new ConfigurationBuilder(appEnv.ApplicationBasePath)
                 .AddJsonFile("config.json")
                 .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
 
@@ -26,7 +26,7 @@ namespace AngularApp.Web
             }
 
             configuration.AddEnvironmentVariables();
-            Configuration = configuration;
+            Configuration = configuration.Build();
         }
 
         public IConfiguration Configuration { get; set; }
@@ -36,7 +36,7 @@ namespace AngularApp.Web
             services.AddDataProtection();
 
             // Add Application settings to the services container.
-            services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
+            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
 
             // Add EF services to the services container.
             /*
