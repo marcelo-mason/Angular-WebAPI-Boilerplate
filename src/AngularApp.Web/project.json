@@ -29,7 +29,8 @@
     "Microsoft.Framework.Logging.Console": "1.0.0-beta5",
     "Microsoft.Owin": "3.0.1",
     "Ninject": "3.2.3-*",
-    "Ninject.Extensions.Conventions": "3.2.1-*"
+    "Ninject.Extensions.Conventions": "3.2.1-*",
+    "ValueInjecter": "3.0.1.1"
   },
 
   "commands": {

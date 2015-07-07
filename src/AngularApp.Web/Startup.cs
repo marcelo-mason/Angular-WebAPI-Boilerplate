@@ -1,17 +1,14 @@
 ﻿using System;
 using AngularApp.Common;
 using AngularApp.IdentityServer.Infrastructure;
-using AngularApp.Service;
 using AngularApp.Web.Core;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.DependencyInjection.Ninject;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Runtime;
-using Ninject;
-using Ninject.Extensions.Conventions;
+using Omu.ValueInjecter;
 
 namespace AngularApp.Web
 {
@@ -51,16 +48,19 @@ namespace AngularApp.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
                 */
+            // Add Application settings to the services container.
+            //services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
 
             services.AddDataProtection();
             services.AddMvc();
 
             // Ninject bindings
-            return new NinjectBindings().Apply(services, Configuration);
+            return NinjectBindings.Apply(services, Configuration);
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
+            // configure OpenID/OAuth2
             IdentityServerStartup.Configure(app, env, loggerfactory);
 
             // Add static files to the request pipeline.

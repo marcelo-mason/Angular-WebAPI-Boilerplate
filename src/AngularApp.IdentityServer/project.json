@@ -33,7 +33,8 @@
     "Microsoft.Framework.Logging.Console": "1.0.0-beta5",
     "Microsoft.Owin": "3.0.1",
     "Ninject": "3.2.3-*",
-    "Remotion.Linq": "2.0.0-beta-002"
+    "Remotion.Linq": "2.0.0-beta-002",
+    "ValueInjecter": "3.0.1.1"
   },
 
   "frameworks": {

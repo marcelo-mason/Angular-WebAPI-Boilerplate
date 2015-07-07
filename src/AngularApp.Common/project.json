@@ -7,7 +7,8 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "Ninject": "3.2.3-*"
+    "Ninject": "3.2.3-*",
+    "ValueInjecter": "3.0.1.1"
   },
 
   "frameworks": {

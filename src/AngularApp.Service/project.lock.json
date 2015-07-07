@@ -10,6 +10,14 @@
         "runtime": {
           "lib/net45-full/Ninject.dll": {}
         }
+      },
+      "ValueInjecter/3.0.1.1": {
+        "compile": {
+          "lib/net45/Omu.ValueInjecter.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Omu.ValueInjecter.dll": {}
+        }
       }
     }
   },
@@ -39,13 +47,25 @@
         "lib/sl5/Ninject.dll",
         "lib/sl5/Ninject.xml"
       ]
+    },
+    "ValueInjecter/3.0.1.1": {
+      "sha512": "6CsMoC2w051C0for/UBNYIdcN4A4nHcEkHrTSQtLuXgz4gRU92VynOHlJIIK2A02SYITDB5eZHQzKakmk2sbyA==",
+      "files": [
+        "ValueInjecter.3.0.1.1.nupkg",
+        "ValueInjecter.3.0.1.1.nupkg.sha512",
+        "ValueInjecter.nuspec",
+        "lib/net45/Omu.ValueInjecter.dll",
+        "lib/net45/Omu.ValueInjecter.pdb",
+        "lib/net45/Omu.ValueInjecter.XML"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "AngularApp.Common >= 1.0.0-*",
       "AngularApp.Domain >= 1.0.0-*",
-      "Ninject >= 3.2.3-*"
+      "Ninject >= 3.2.3-*",
+      "ValueInjecter >= 3.0.1.1"
     ],
     "DNX,Version=v4.5.1": []
   }

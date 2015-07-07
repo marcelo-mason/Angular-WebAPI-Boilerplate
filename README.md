@@ -6,6 +6,8 @@ Includes:
 * Tasks: Gulp
 * Testing: Karma + Protractor
 * UI Framework: Angular Material
+* Dependency Injection: Ninject
+* OpenID/OAuth2: IdentityServer3
 * Sample controllers, directives, services
 
 # Gulp Tasks

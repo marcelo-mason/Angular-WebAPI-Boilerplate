@@ -5,9 +5,8 @@ using IdentityServer3.Core.Configuration;
 using IdentityServer3.Core.Logging;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using Ninject;
+using Microsoft.Framework.OptionsModel;
 
 namespace AngularApp.IdentityServer.Infrastructure
 {

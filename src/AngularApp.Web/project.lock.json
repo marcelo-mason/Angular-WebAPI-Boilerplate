@@ -1614,6 +1614,14 @@
         "runtime": {
           "lib/portable-net45+win8/System.Reflection.Metadata.dll": {}
         }
+      },
+      "ValueInjecter/3.0.1.1": {
+        "compile": {
+          "lib/net45/Omu.ValueInjecter.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Omu.ValueInjecter.dll": {}
+        }
       }
     }
   },
@@ -3039,6 +3047,17 @@
         "lib/portable-net45+win8/System.Reflection.Metadata.dll",
         "lib/portable-net45+win8/System.Reflection.Metadata.xml"
       ]
+    },
+    "ValueInjecter/3.0.1.1": {
+      "sha512": "6CsMoC2w051C0for/UBNYIdcN4A4nHcEkHrTSQtLuXgz4gRU92VynOHlJIIK2A02SYITDB5eZHQzKakmk2sbyA==",
+      "files": [
+        "ValueInjecter.3.0.1.1.nupkg",
+        "ValueInjecter.3.0.1.1.nupkg.sha512",
+        "ValueInjecter.nuspec",
+        "lib/net45/Omu.ValueInjecter.dll",
+        "lib/net45/Omu.ValueInjecter.pdb",
+        "lib/net45/Omu.ValueInjecter.XML"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -3067,7 +3086,8 @@
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta5",
       "Microsoft.Owin >= 3.0.1",
       "Ninject >= 3.2.3-*",
-      "Ninject.Extensions.Conventions >= 3.2.1-*"
+      "Ninject.Extensions.Conventions >= 3.2.1-*",
+      "ValueInjecter >= 3.0.1.1"
     ],
     "DNX,Version=v4.5.1": []
   }
