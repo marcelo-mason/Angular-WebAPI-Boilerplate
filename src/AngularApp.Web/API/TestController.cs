@@ -3,7 +3,7 @@ using Microsoft.AspNet.Mvc;
 
 namespace AngularApp.Web.API
 {
-    //[Authorize]
+    [Authorize]
     [Route("[controller]")]
     public class Test : Controller
     {

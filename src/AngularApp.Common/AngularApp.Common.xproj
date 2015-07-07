@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>2694c7df-41b6-41d7-aaa4-f4c3292c60a8</ProjectGuid>
-    <RootNamespace>AngularApp.Service</RootNamespace>
+    <ProjectGuid>71b77444-5efd-416a-b905-102a051b146f</ProjectGuid>
+    <RootNamespace>AngularApp.Common</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>

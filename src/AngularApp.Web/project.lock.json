@@ -84,23 +84,6 @@
           "lib/dnx451/EntityFramework.Core.dll": {}
         }
       },
-      "EntityFramework.Migrations/7.0.0-beta1": {
-        "dependencies": {
-          "EntityFramework.Relational": "7.0.0-beta1"
-        },
-        "frameworkAssemblies": [
-          "mscorlib",
-          "System",
-          "System.Core",
-          "Microsoft.CSharp"
-        ],
-        "compile": {
-          "lib/aspnet50/EntityFramework.Migrations.dll": {}
-        },
-        "runtime": {
-          "lib/aspnet50/EntityFramework.Migrations.dll": {}
-        }
-      },
       "EntityFramework.Relational/7.0.0-beta5": {
         "dependencies": {
           "EntityFramework.Core": "7.0.0-beta5"
@@ -241,6 +224,25 @@
           "lib/dnx451/Microsoft.AspNet.Authentication.dll": {}
         }
       },
+      "Microsoft.AspNet.Authentication.Cookies/1.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.AspNet.Authentication": "1.0.0-beta5",
+          "Microsoft.Framework.WebEncoders": "1.0.0-beta5",
+          "Newtonsoft.Json": "6.0.6"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.dll": {}
+        }
+      },
       "Microsoft.AspNet.Authentication.OAuthBearer/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.AspNet.Authentication": "1.0.0-beta5",
@@ -333,6 +335,23 @@
           "lib/dnx451/Microsoft.AspNet.Cryptography.Internal.dll": {}
         }
       },
+      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-beta5"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
+        }
+      },
       "Microsoft.AspNet.DataProtection/1.0.0-beta5": {
         "dependencies": {
           "Microsoft.AspNet.Cryptography.Internal": "1.0.0-beta5",
@@ -412,23 +431,25 @@
           "lib/dnx451/Microsoft.AspNet.Diagnostics.Abstractions.dll": {}
         }
       },
-      "Microsoft.AspNet.Diagnostics.Entity/7.0.0-beta1": {
+      "Microsoft.AspNet.Diagnostics.Entity/7.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
-          "EntityFramework.Migrations": "7.0.0-beta1"
+          "Microsoft.AspNet.Diagnostics": "1.0.0-beta5",
+          "EntityFramework.Core": "7.0.0-beta5",
+          "EntityFramework.Relational": "7.0.0-beta5"
         },
         "frameworkAssemblies": [
           "System.Configuration",
+          "System.Threading.Tasks",
           "mscorlib",
           "System",
           "System.Core",
           "Microsoft.CSharp"
         ],
         "compile": {
-          "lib/aspnet50/Microsoft.AspNet.Diagnostics.Entity.dll": {}
+          "lib/dnx451/Microsoft.AspNet.Diagnostics.Entity.dll": {}
         },
         "runtime": {
-          "lib/aspnet50/Microsoft.AspNet.Diagnostics.Entity.dll": {}
+          "lib/dnx451/Microsoft.AspNet.Diagnostics.Entity.dll": {}
         }
       },
       "Microsoft.AspNet.FeatureModel/1.0.0-beta5": {
@@ -616,6 +637,26 @@
           "lib/dnx451/Microsoft.AspNet.Http.Features.dll": {}
         }
       },
+      "Microsoft.AspNet.Identity/3.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta5",
+          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-beta5",
+          "Microsoft.AspNet.DataProtection": "1.0.0-beta5",
+          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-beta5"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Identity.dll": {}
+        }
+      },
       "Microsoft.AspNet.Identity.Core/2.1.0": {
         "compile": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
@@ -624,16 +665,23 @@
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
         }
       },
-      "Microsoft.AspNet.Identity.EntityFramework/1.0.0-rc1": {
+      "Microsoft.AspNet.Identity.EntityFramework/3.0.0-beta5": {
         "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "1.0.0-rc1",
-          "EntityFramework": "6.0.0-rc1"
+          "Microsoft.AspNet.Identity": "3.0.0-beta5",
+          "EntityFramework.SqlServer": "7.0.0-beta5"
         },
+        "frameworkAssemblies": [
+          "System.Threading.Tasks",
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
         "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+          "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.dll": {}
         },
         "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+          "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.dll": {}
         }
       },
       "Microsoft.AspNet.JsonPatch/1.0.0-beta5": {
@@ -1184,6 +1232,24 @@
           "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
         }
       },
+      "Microsoft.Framework.DependencyInjection.Ninject/1.0.0-beta6-11563": {
+        "dependencies": {
+          "Microsoft.Framework.DependencyInjection": "1.0.0-beta6-11563",
+          "Ninject": "3.0.1.10"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Ninject.dll": {}
+        }
+      },
       "Microsoft.Framework.Logging/1.0.0-beta5-11414": {
         "dependencies": {
           "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta5-11423",
@@ -1477,6 +1543,25 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
+      "Ninject/3.2.3-unstable-012": {
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.Extensions.Conventions/3.2.1-unstable-003": {
+        "dependencies": {
+          "Ninject": "3.2.0-unstable"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.Extensions.Conventions.dll": {}
+        }
+      },
       "Owin/1.0": {
         "compile": {
           "lib/net40/Owin.dll": {}
@@ -1666,22 +1751,6 @@
         "lib/net45/EntityFramework.Core.xml"
       ]
     },
-    "EntityFramework.Migrations/7.0.0-beta1": {
-      "sha512": "UP9SbD/NV8YeE9mKBJtlN+dlVBUszMPX2eSN6MmvslOtDpszxAKOKatn+seuRkdOsU+o5v+yjlD1a5Z2mShnlg==",
-      "files": [
-        "EntityFramework.Migrations.7.0.0-beta1.nupkg",
-        "EntityFramework.Migrations.7.0.0-beta1.nupkg.sha512",
-        "EntityFramework.Migrations.nuspec",
-        "lib/aspnet50/EntityFramework.Migrations.dll",
-        "lib/aspnet50/EntityFramework.Migrations.xml",
-        "lib/aspnetcore50/EntityFramework.Migrations.dll",
-        "lib/aspnetcore50/EntityFramework.Migrations.xml",
-        "lib/net451/EntityFramework.Migrations.dll",
-        "lib/net451/EntityFramework.Migrations.xml",
-        "lib/portable-net451+win81+wpa81/EntityFramework.Migrations.dll",
-        "lib/portable-net451+win81+wpa81/EntityFramework.Migrations.xml"
-      ]
-    },
     "EntityFramework.Relational/7.0.0-beta5": {
       "serviceable": true,
       "sha512": "XlOvyYg187StWn8dkO09PrBBi3sCwnk+omyR2c4WVzLLs5ya73YCnr7p8/ZfYaaaTMUkhURbeZkLugAVcXrYjA==",
@@ -1793,6 +1862,19 @@
         "lib/dnxcore50/Microsoft.AspNet.Authentication.xml"
       ]
     },
+    "Microsoft.AspNet.Authentication.Cookies/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "slpGZOh7Gp8YFE9cdlzce67LFUAspBAp6WfjzhH270Ck/D8lzY83DiDLe2IQOhgH+MxlYi+r4bb7PvOhmoSM7g==",
+      "files": [
+        "Microsoft.AspNet.Authentication.Cookies.1.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Authentication.Cookies.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.AspNet.Authentication.Cookies.nuspec",
+        "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.dll",
+        "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Authentication.Cookies.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Authentication.Cookies.xml"
+      ]
+    },
     "Microsoft.AspNet.Authentication.OAuthBearer/1.0.0-beta5": {
       "serviceable": true,
       "sha512": "lQl4zK2+iNoYVrlQGYt54D877RlVk2V6okuT5OAScaOd39vR6MpY1KNQbs61eGiyKEi4qvhkqX+25la0/81K8g==",
@@ -1860,6 +1942,21 @@
         "lib/net451/Microsoft.AspNet.Cryptography.Internal.xml"
       ]
     },
+    "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "+WNScZ3xDqJLOd/DCSt/mwrFbhBL3EsG2SVptZuGz0n6aeEgaV/I5WHZz75IvbEWQolc9m0I/GW8Nz6LXmEVsg==",
+      "files": [
+        "Microsoft.AspNet.Cryptography.KeyDerivation.1.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Cryptography.KeyDerivation.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.AspNet.Cryptography.KeyDerivation.nuspec",
+        "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
+        "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
+        "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
+        "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.xml"
+      ]
+    },
     "Microsoft.AspNet.DataProtection/1.0.0-beta5": {
       "serviceable": true,
       "sha512": "f8oqJIyHUbmsIkgEq+A7QQOKr60s4GoewR2I+ItHGuHdwV6ICuNnu4yKSx7v0k/uh51T49ECcrrMApUepuV2mg==",
@@ -1916,16 +2013,17 @@
         "lib/dnxcore50/Microsoft.AspNet.Diagnostics.Abstractions.xml"
       ]
     },
-    "Microsoft.AspNet.Diagnostics.Entity/7.0.0-beta1": {
-      "sha512": "bAPzFK5WAtu0LSzF3G335FS3E7QrlXYShon3/uLZt55LCTlE8Q8l+5ApkTdAPfoQwWP1O5Fqg3u2S8sq/UWJig==",
+    "Microsoft.AspNet.Diagnostics.Entity/7.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "rj+GHKB+7hs0YubE9gbzT6DCcQzct1IWf6xNGi+7D/w5o7TemBOoVlap6u9vnf16+be72lL+9GRfE2Ts3xisLQ==",
       "files": [
-        "Microsoft.AspNet.Diagnostics.Entity.7.0.0-beta1.nupkg",
-        "Microsoft.AspNet.Diagnostics.Entity.7.0.0-beta1.nupkg.sha512",
+        "Microsoft.AspNet.Diagnostics.Entity.7.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Diagnostics.Entity.7.0.0-beta5.nupkg.sha512",
         "Microsoft.AspNet.Diagnostics.Entity.nuspec",
-        "lib/aspnet50/Microsoft.AspNet.Diagnostics.Entity.dll",
-        "lib/aspnet50/Microsoft.AspNet.Diagnostics.Entity.xml",
-        "lib/aspnetcore50/Microsoft.AspNet.Diagnostics.Entity.dll",
-        "lib/aspnetcore50/Microsoft.AspNet.Diagnostics.Entity.xml"
+        "lib/dnx451/Microsoft.AspNet.Diagnostics.Entity.dll",
+        "lib/dnx451/Microsoft.AspNet.Diagnostics.Entity.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Diagnostics.Entity.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Diagnostics.Entity.xml"
       ]
     },
     "Microsoft.AspNet.FeatureModel/1.0.0-beta5": {
@@ -2061,6 +2159,19 @@
         "lib/dnxcore50/Microsoft.AspNet.Http.Features.xml"
       ]
     },
+    "Microsoft.AspNet.Identity/3.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "EPvARm3E3xsIlPGQbEdCLv9ZU3uWwa8JJJo+2xAWoLRu1V4mMwz8M8RZJHCiPzBrlgN4cv0ekKUllI67veXLVg==",
+      "files": [
+        "Microsoft.AspNet.Identity.3.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Identity.3.0.0-beta5.nupkg.sha512",
+        "Microsoft.AspNet.Identity.nuspec",
+        "lib/dnx451/Microsoft.AspNet.Identity.dll",
+        "lib/dnx451/Microsoft.AspNet.Identity.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Identity.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Identity.xml"
+      ]
+    },
     "Microsoft.AspNet.Identity.Core/2.1.0": {
       "serviceable": true,
       "sha512": "v3yoJcpo5D/HpGbP89KEOiF0YLKNpBjebuDoWHU7Jxb64rsSPfFeJusYvzbGusYypwOzAtPARXun6Xbxw3kqPA==",
@@ -2072,14 +2183,17 @@
         "lib/net45/Microsoft.AspNet.Identity.Core.xml"
       ]
     },
-    "Microsoft.AspNet.Identity.EntityFramework/1.0.0-rc1": {
-      "sha512": "gFkUBonGx5xpbjuePc2/uW93pM+1vnsG0eP394msCJFFo8PNl9OkPlcp0FZiJ69+X+iKYAaY2KZXBrc2/7fATA==",
+    "Microsoft.AspNet.Identity.EntityFramework/3.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "TbzzcLIVW2dwwbZ3uQg5cFOfE02pi7niYE3KLsv9Igghw+wEP3iRdh7pmgmucknCiNjY46WmJ7zIlV2ChdRL5A==",
       "files": [
-        "Microsoft.AspNet.Identity.EntityFramework.1.0.0-rc1.nupkg",
-        "Microsoft.AspNet.Identity.EntityFramework.1.0.0-rc1.nupkg.sha512",
+        "Microsoft.AspNet.Identity.EntityFramework.3.0.0-beta5.nupkg",
+        "Microsoft.AspNet.Identity.EntityFramework.3.0.0-beta5.nupkg.sha512",
         "Microsoft.AspNet.Identity.EntityFramework.nuspec",
-        "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll",
-        "lib/net45/Microsoft.AspNet.Identity.EntityFramework.xml"
+        "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.dll",
+        "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Identity.EntityFramework.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Identity.EntityFramework.xml"
       ]
     },
     "Microsoft.AspNet.JsonPatch/1.0.0-beta5": {
@@ -2538,6 +2652,19 @@
         "lib/portable-net45+win/Microsoft.Framework.DependencyInjection.Abstractions.xml"
       ]
     },
+    "Microsoft.Framework.DependencyInjection.Ninject/1.0.0-beta6-11563": {
+      "sha512": "leFEeMkWSorF9+M665+yfG0oh/APJQY+5BBOZJySi0PyJcxQSt4ReWt95phu7D8YLsu3TyEWc55fJSKNVBwIHA==",
+      "files": [
+        "Microsoft.Framework.DependencyInjection.Ninject.1.0.0-beta6-11563.nupkg",
+        "Microsoft.Framework.DependencyInjection.Ninject.1.0.0-beta6-11563.nupkg.sha512",
+        "Microsoft.Framework.DependencyInjection.Ninject.nuspec",
+        "repo.json",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Ninject.dll",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Ninject.xml",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Ninject.dll",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Ninject.xml"
+      ]
+    },
     "Microsoft.Framework.Logging/1.0.0-beta5-11414": {
       "serviceable": true,
       "sha512": "9Eep10I9WNrxz7T/7QiGN20cxWspzBiccvk0L90JqBhza9ssgFCyT+Cmd4Ri/zPdUfam9zmVJ58BpQ461c1jFQ==",
@@ -2799,6 +2926,58 @@
         "tools/install.ps1"
       ]
     },
+    "Ninject/3.2.3-unstable-012": {
+      "sha512": "PhlPPMvLeGK5kyRzRbesJKUOJY2wGNXuPQvbVhRzhB8rFJ8CV+1iElmqqpO8e/SfO/AZqUrX3Bk2Gm2Fx6KzGA==",
+      "files": [
+        "Ninject.3.2.3-unstable-012.nupkg",
+        "Ninject.3.2.3-unstable-012.nupkg.sha512",
+        "Ninject.nuspec",
+        "lib/net35/Ninject.dll",
+        "lib/net35/Ninject.xml",
+        "lib/net40/Ninject.dll",
+        "lib/net40/Ninject.xml",
+        "lib/net45-full/Ninject.dll",
+        "lib/net45-full/Ninject.xml",
+        "lib/sl2/Ninject.dll",
+        "lib/sl2/Ninject.xml",
+        "lib/sl3/Ninject.dll",
+        "lib/sl3/Ninject.xml",
+        "lib/sl3-wp/Ninject.dll",
+        "lib/sl3-wp/Ninject.xml",
+        "lib/sl4/Ninject.dll",
+        "lib/sl4/Ninject.xml",
+        "lib/sl4-windowsphone71/Ninject.dll",
+        "lib/sl4-windowsphone71/Ninject.xml",
+        "lib/sl5/Ninject.dll",
+        "lib/sl5/Ninject.xml"
+      ]
+    },
+    "Ninject.Extensions.Conventions/3.2.1-unstable-003": {
+      "sha512": "vxjKusYmH72uvyDVVG2KbVObqhHG99nZGDOrMUSHBGfl8zQI/kKd21BWAcKL8J1zHvDPWkSvm7LRX3/aqIFCGQ==",
+      "files": [
+        "Ninject.Extensions.Conventions.3.2.1-unstable-003.nupkg",
+        "Ninject.Extensions.Conventions.3.2.1-unstable-003.nupkg.sha512",
+        "Ninject.Extensions.Conventions.nuspec",
+        "lib/net35/Ninject.Extensions.Conventions.dll",
+        "lib/net35/Ninject.Extensions.Conventions.xml",
+        "lib/net40/Ninject.Extensions.Conventions.dll",
+        "lib/net40/Ninject.Extensions.Conventions.xml",
+        "lib/net45-full/Ninject.Extensions.Conventions.dll",
+        "lib/net45-full/Ninject.Extensions.Conventions.xml",
+        "lib/sl2/Ninject.Extensions.Conventions.dll",
+        "lib/sl2/Ninject.Extensions.Conventions.xml",
+        "lib/sl3/Ninject.Extensions.Conventions.dll",
+        "lib/sl3/Ninject.Extensions.Conventions.xml",
+        "lib/sl3-wp/Ninject.Extensions.Conventions.dll",
+        "lib/sl3-wp/Ninject.Extensions.Conventions.xml",
+        "lib/sl4/Ninject.Extensions.Conventions.dll",
+        "lib/sl4/Ninject.Extensions.Conventions.xml",
+        "lib/sl4-windowsphone71/Ninject.Extensions.Conventions.dll",
+        "lib/sl4-windowsphone71/Ninject.Extensions.Conventions.xml",
+        "lib/sl5/Ninject.Extensions.Conventions.dll",
+        "lib/sl5/Ninject.Extensions.Conventions.xml"
+      ]
+    },
     "Owin/1.0": {
       "sha512": "OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
       "files": [
@@ -2864,27 +3043,31 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "AngularApp.Common >= 1.0.0-*",
+      "AngularApp.Domain >= 1.0.0-*",
+      "AngularApp.IdentityServer >= 1.0.0-*",
+      "AngularApp.Service >= 1.0.0-*",
       "EntityFramework.Commands >= 7.0.0-beta5",
       "EntityFramework.SqlServer >= 7.0.0-beta5",
+      "Microsoft.AspNet.DataProtection >= 1.0.0-beta5",
       "Microsoft.AspNet.Diagnostics >= 1.0.0-beta5",
-      "Microsoft.AspNet.Diagnostics.Entity >= 1.0.0-beta5",
+      "Microsoft.AspNet.Diagnostics.Entity >= 7.0.0-beta5",
       "Microsoft.AspNet.Mvc >= 6.0.0-beta5",
       "Microsoft.AspNet.Owin >= 1.0.0-beta5",
       "Microsoft.AspNet.Server.IIS >= 1.0.0-beta5",
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta5",
       "Microsoft.AspNet.StaticFiles >= 1.0.0-beta5",
-      "Microsoft.AspNet.DataProtection >= 1.0.0-beta5",
       "Microsoft.Framework.Configuration >= 1.0.0-beta5",
+      "Microsoft.Framework.Configuration.EnvironmentVariables >= 1.0.0-beta5",
       "Microsoft.Framework.Configuration.Json >= 1.0.0-beta5-*",
       "Microsoft.Framework.Configuration.UserSecrets >= 1.0.0-beta5",
-      "Microsoft.Framework.Configuration.EnvironmentVariables >= 1.0.0-beta5",
       "Microsoft.Framework.DependencyInjection >= 1.0.0-beta5-*",
+      "Microsoft.Framework.DependencyInjection.Ninject >= 1.0.0-beta6-*",
       "Microsoft.Framework.Logging >= 1.0.0-beta5-*",
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta5",
       "Microsoft.Owin >= 3.0.1",
-      "AngularApp.Domain >= 1.0.0-*",
-      "AngularApp.IdentityServer >= 1.0.0-*",
-      "AngularApp.Service >= 1.0.0-*"
+      "Ninject >= 3.2.3-*",
+      "Ninject.Extensions.Conventions >= 3.2.1-*"
     ],
     "DNX,Version=v4.5.1": []
   }

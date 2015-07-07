@@ -1,6 +1,10 @@
 {
   "AppSettings": {
-    "SiteTitle": "AngularApp"
+    "SiteTitle": "AngularApp",
+    "IssuerUrl": "https://idsrv3.com",
+    "BaseUrl": "http://localhost:1618",
+    "AuthorizationUrl": "http://localhost:1618/core",
+    "ApiUrl": "http://localhost:1618/api"
   },
   "Data": {
     "DefaultConnection": {

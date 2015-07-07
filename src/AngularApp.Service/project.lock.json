@@ -1,9 +1,52 @@
 {
   "locked": false,
-  "version": -9998,
-  "projectFileDependencyGroups": {
-    "": [],
-    "DNX,Version=v4.5.1": []
+  "version": -9996,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Ninject/3.2.3-unstable-012": {
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {}
+  "libraries": {
+    "Ninject/3.2.3-unstable-012": {
+      "sha512": "PhlPPMvLeGK5kyRzRbesJKUOJY2wGNXuPQvbVhRzhB8rFJ8CV+1iElmqqpO8e/SfO/AZqUrX3Bk2Gm2Fx6KzGA==",
+      "files": [
+        "Ninject.3.2.3-unstable-012.nupkg",
+        "Ninject.3.2.3-unstable-012.nupkg.sha512",
+        "Ninject.nuspec",
+        "lib/net35/Ninject.dll",
+        "lib/net35/Ninject.xml",
+        "lib/net40/Ninject.dll",
+        "lib/net40/Ninject.xml",
+        "lib/net45-full/Ninject.dll",
+        "lib/net45-full/Ninject.xml",
+        "lib/sl2/Ninject.dll",
+        "lib/sl2/Ninject.xml",
+        "lib/sl3/Ninject.dll",
+        "lib/sl3/Ninject.xml",
+        "lib/sl3-wp/Ninject.dll",
+        "lib/sl3-wp/Ninject.xml",
+        "lib/sl4/Ninject.dll",
+        "lib/sl4/Ninject.xml",
+        "lib/sl4-windowsphone71/Ninject.dll",
+        "lib/sl4-windowsphone71/Ninject.xml",
+        "lib/sl5/Ninject.dll",
+        "lib/sl5/Ninject.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "AngularApp.Common >= 1.0.0-*",
+      "AngularApp.Domain >= 1.0.0-*",
+      "Ninject >= 3.2.3-*"
+    ],
+    "DNX,Version=v4.5.1": []
+  }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "",
   "authors": [ "" ],
@@ -7,29 +7,32 @@
   "licenseUrl": "",
 
   "dependencies": {
+    "AngularApp.Common": "1.0.0-*",
+    "AngularApp.Domain": "1.0.0-*",
     "EntityFramework.Commands": "7.0.0-beta5",
     "EntityFramework.SqlServer": "7.0.0-beta5",
     "IdentityModel": "1.0.0-beta4",
     "IdentityServer3": "2.0.0-rc1",
-    "IdentityServer3.EntityFramework": "2.0.0-rc1",
     "IdentityServer3.AspNetIdentity": "2.0.0-rc1",
+    "IdentityServer3.EntityFramework": "2.0.0-rc1",
     "Microsoft.AspNet.Authentication.OAuthBearer": "1.0.0-beta5",
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta5",
-    "Microsoft.AspNet.Diagnostics.Entity": "1.0.0-beta5",
-    "Microsoft.AspNet.Identity.EntityFramework": "1.0.0-beta5",
+    "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta5",
+    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta5",
     "Microsoft.AspNet.Mvc": "6.0.0-beta5",
     "Microsoft.AspNet.Owin": "1.0.0-beta5",
     "Microsoft.AspNet.Server.IIS": "1.0.0-beta5",
     "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
     "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
     "Microsoft.Framework.Configuration": "1.0.0-beta5",
+    "Microsoft.Framework.Configuration.EnvironmentVariables": "1.0.0-beta5",
     "Microsoft.Framework.Configuration.Json": "1.0.0-beta5-*",
     "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta5",
-    "Microsoft.Framework.Configuration.EnvironmentVariables": "1.0.0-beta5",
     "Microsoft.Framework.DependencyInjection": "1.0.0-beta5-*",
     "Microsoft.Framework.Logging": "1.0.0-beta5-*",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta5",
     "Microsoft.Owin": "3.0.1",
+    "Ninject": "3.2.3-*",
     "Remotion.Linq": "2.0.0-beta-002"
   },
 

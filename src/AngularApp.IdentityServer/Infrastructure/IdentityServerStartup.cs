@@ -1,16 +1,25 @@
-﻿using AngularApp.IdentityServer.Config;
+﻿using AngularApp.Common;
+using AngularApp.IdentityServer.Config;
 using AngularApp.IdentityServer.Config.Factory;
 using IdentityServer3.Core.Configuration;
+using IdentityServer3.Core.Logging;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Logging;
+using Microsoft.Framework.OptionsModel;
+using Ninject;
 
 namespace AngularApp.IdentityServer.Infrastructure
 {
     public static class IdentityServerStartup
     {
+        [Inject]
+        private static IOptions<AppSettings> Settings { get; set; }
+
         public static void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
+            LogProvider.SetCurrentLogProvider(new DiagnosticsTraceLogProvider());
+
             app.Map("/core", core =>
             {
                 var factory = InMemoryFactory.Create(
@@ -20,8 +29,15 @@ namespace AngularApp.IdentityServer.Infrastructure
 
                 var idsrvOptions = new IdentityServerOptions
                 {
-                    IssuerUri = Constants.IssuerUrl,
-                    SiteName = Constants.SiteName,
+                    LoggingOptions = new LoggingOptions
+                    {
+                        IncludeSensitiveDataInLogs = true,
+                        WebApiDiagnosticsIsVerbose = true,
+                        EnableWebApiDiagnostics = true,
+                        //EnableHttpLogging = true
+                    },
+                    IssuerUri = Settings.Options.IssuerUrl,
+                    SiteName = Settings.Options.SiteTitle,
                     Factory = factory,
                     SigningCertificate = Certificate.Get(),
                     RequireSsl = false,
@@ -34,9 +50,9 @@ namespace AngularApp.IdentityServer.Infrastructure
             app.Map("/api", api =>
             {
                 api.UseOAuthBearerAuthentication(options => {
-                    options.Authority = Constants.AuthorizationUrl;
-                    options.MetadataAddress = Constants.AuthorizationUrl + "/.well-known/openid-configuration";
-                    options.TokenValidationParameters.ValidAudience = Constants.BaseUrl + "/resources";
+                    options.Authority = Settings.Options.AuthorizationUrl;
+                    options.MetadataAddress = Settings.Options.AuthorizationUrl + "/.well-known/openid-configuration";
+                    options.TokenValidationParameters.ValidAudience = Settings.Options.BaseUrl + "/resources";
                 });
 
                 // for web api

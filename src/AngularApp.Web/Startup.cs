@@ -1,16 +1,24 @@
-﻿using AngularApp.IdentityServer.Infrastructure;
-using AngularApp.Web.Properties;
+﻿using System;
+using AngularApp.Common;
+using AngularApp.IdentityServer.Infrastructure;
+using AngularApp.Service;
+using AngularApp.Web.Core;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.DependencyInjection.Ninject;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Runtime;
+using Ninject;
+using Ninject.Extensions.Conventions;
 
 namespace AngularApp.Web
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; set; }
+
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
@@ -29,9 +37,7 @@ namespace AngularApp.Web
             Configuration = configuration.Build();
         }
 
-        public IConfiguration Configuration { get; set; }
-
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddDataProtection();
 
@@ -53,9 +59,12 @@ namespace AngularApp.Web
 
             // Add MVC services to the services container.
             services.AddMvc();
+
+            // Ninject bindings
+            var bindings = new NinjectBindings();
+            return bindings.Apply(services);
         }
-
-
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
             IdentityServerStartup.Configure(app, env, loggerfactory);

@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "1.0.0-*",
   "description": "",
   "authors": [ "" ],
@@ -7,12 +7,10 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "AngularApp.Common": "1.0.0-*",
-    "AngularApp.Domain": "1.0.0-*",
     "Ninject": "3.2.3-*"
   },
 
-  "frameworks": {
+  "frameworks" : {
     "dnx451": { }
   }
 }
