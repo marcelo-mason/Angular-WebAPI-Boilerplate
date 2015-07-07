@@ -1,7 +1,6 @@
 ﻿using System;
 using AngularApp.Common;
 using AngularApp.IdentityServer.Infrastructure;
-using AngularApp.Web.Core;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Configuration;
@@ -34,7 +33,7 @@ namespace AngularApp.Web
             Configuration = configuration.Build();
         }
 
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             // Add EF services to the services container.
             /*
@@ -49,19 +48,16 @@ namespace AngularApp.Web
                 .AddDefaultTokenProviders();
                 */
             // Add Application settings to the services container.
-            //services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
+            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
 
             services.AddDataProtection();
             services.AddMvc();
-
-            // Ninject bindings
-            return NinjectBindings.Apply(services, Configuration);
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
             // configure OpenID/OAuth2
-            IdentityServerStartup.Configure(app, env, loggerfactory);
+            IdentityServerStartup.Configure(app);
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
