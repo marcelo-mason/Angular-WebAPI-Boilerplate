@@ -2,6 +2,7 @@
 using AngularApp.Common;
 using AngularApp.Domain;
 using AngularApp.Service;
+using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.DependencyInjection.Ninject;
 using Ninject;
@@ -11,10 +12,10 @@ namespace AngularApp.Web.Core
 {
     public class NinjectBindings
     {
-        public IServiceProvider Apply(IServiceCollection services)
+        public IServiceProvider Apply(IServiceCollection services, IConfiguration configuration)
         {
             // Create a new Ninject kernel for your bindings 
-            var kernel = new StandardKernel();
+            var kernel = ServiceLocator.Current.GetKernel();
 
             // Set up your bindings for DI
             kernel.Bind(k => k.FromAssemblyContaining<IAppService>()
@@ -28,8 +29,10 @@ namespace AngularApp.Web.Core
                 .InNamespaceOf(typeof(IAppRepository))
                 .BindDefaultInterfaces()
                 .Configure(c => c.InRequestScope()));
-            
-            kernel.Bind<AppSettings>().To<AppSettings>().InSingletonScope();
+
+            kernel.Bind<AppSettings>()
+                .To<AppSettings>()
+                .WithConstructorArgument(configuration.GetConfigurationSection("AppSettings"));
 
             // Add all the ASP.NET services to your Ninject kernel
             kernel.Populate(services);

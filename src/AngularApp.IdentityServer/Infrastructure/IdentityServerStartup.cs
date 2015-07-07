@@ -5,20 +5,19 @@ using IdentityServer3.Core.Configuration;
 using IdentityServer3.Core.Logging;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using Microsoft.Framework.OptionsModel;
 using Ninject;
 
 namespace AngularApp.IdentityServer.Infrastructure
 {
     public static class IdentityServerStartup
     {
-        [Inject]
-        private static IOptions<AppSettings> Settings { get; set; }
-
         public static void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
             LogProvider.SetCurrentLogProvider(new DiagnosticsTraceLogProvider());
+
+            var settings = ServiceLocator.Current.GetInstance<AppSettings>();
 
             app.Map("/core", core =>
             {
@@ -36,8 +35,8 @@ namespace AngularApp.IdentityServer.Infrastructure
                         EnableWebApiDiagnostics = true,
                         //EnableHttpLogging = true
                     },
-                    IssuerUri = Settings.Options.IssuerUrl,
-                    SiteName = Settings.Options.SiteTitle,
+                    IssuerUri = settings.IssuerUrl,
+                    SiteName = settings.SiteTitle,
                     Factory = factory,
                     SigningCertificate = Certificate.Get(),
                     RequireSsl = false,
@@ -50,9 +49,9 @@ namespace AngularApp.IdentityServer.Infrastructure
             app.Map("/api", api =>
             {
                 api.UseOAuthBearerAuthentication(options => {
-                    options.Authority = Settings.Options.AuthorizationUrl;
-                    options.MetadataAddress = Settings.Options.AuthorizationUrl + "/.well-known/openid-configuration";
-                    options.TokenValidationParameters.ValidAudience = Settings.Options.BaseUrl + "/resources";
+                    options.Authority = settings.AuthorizationUrl;
+                    options.MetadataAddress = settings.AuthorizationUrl + "/.well-known/openid-configuration";
+                    options.TokenValidationParameters.ValidAudience = settings.BaseUrl + "/resources";
                 });
 
                 // for web api

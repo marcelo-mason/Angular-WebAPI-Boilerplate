@@ -10,7 +10,7 @@
     "Ninject": "3.2.3-*"
   },
 
-  "frameworks" : {
+  "frameworks": {
     "dnx451": { }
   }
 }

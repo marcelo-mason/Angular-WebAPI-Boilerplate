@@ -39,11 +39,6 @@ namespace AngularApp.Web
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddDataProtection();
-
-            // Add Application settings to the services container.
-            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
-
             // Add EF services to the services container.
             /*
             services.AddEntityFramework()
@@ -57,12 +52,11 @@ namespace AngularApp.Web
                 .AddDefaultTokenProviders();
                 */
 
-            // Add MVC services to the services container.
+            services.AddDataProtection();
             services.AddMvc();
 
             // Ninject bindings
-            var bindings = new NinjectBindings();
-            return bindings.Apply(services);
+            return new NinjectBindings().Apply(services, Configuration);
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
