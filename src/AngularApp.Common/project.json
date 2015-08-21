@@ -7,7 +7,9 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "ValueInjecter": "3.0.1.1"
+    "ValueInjecter": "3.0.1.1",
+    "Microsoft.Framework.Logging": "1.0.0-beta6-*",
+    "Microsoft.Framework.Logging.Console": "1.0.0-beta6-*"
   },
 
   "frameworks": {

@@ -4,7 +4,7 @@ var config      = require('../config');
 var browserSync = require('browser-sync');
 var gulp        = require('gulp');
 
-gulp.task('browserSync', function () {
+gulp.task('watch:browserSync', function () {
 
     browserSync({
         port: config.browserSync.browserport,

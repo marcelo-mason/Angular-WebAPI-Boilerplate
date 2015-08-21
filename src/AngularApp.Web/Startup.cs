@@ -1,13 +1,21 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web.Http;
 using AngularApp.Common;
+using AngularApp.Domain.Core;
+using AngularApp.Domain.Entities.Identity;
 using AngularApp.IdentityServer.Infrastructure;
+using AngularApp.Web.Setup;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Data.Entity;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Runtime;
-using Omu.ValueInjecter;
 
 namespace AngularApp.Web
 {
@@ -17,15 +25,12 @@ namespace AngularApp.Web
 
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
-            // Setup configuration sources.
             var configuration = new ConfigurationBuilder(appEnv.ApplicationBasePath)
                 .AddJsonFile("config.json")
                 .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
 
             if (env.IsEnvironment("Development"))
             {
-                // This reads the configuration keys from the secret store.
-                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
                 configuration.AddUserSecrets();
             }
 
@@ -35,32 +40,34 @@ namespace AngularApp.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add EF services to the services container.
-            /*
-            services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+            // DI bindings
+            new DependencyInjection().Bind(services);
 
-            // Add Identity services to the services container.
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-                */
-            // Add Application settings to the services container.
             services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
-
             services.AddDataProtection();
             services.AddMvc();
         }
-        
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
-            // configure OpenID/OAuth2
-            IdentityServerStartup.Configure(app);
+            // Add the console logger.
+            loggerfactory.AddConsole(minLevel: LogLevel.Warning);
+
+            // Configure identity server
+            new IdentityServerMiddleware().Configure(app);
+
+            // Configure web api
+            new HttpConfiguration().MapHttpAttributeRoutes();
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
+
+            // Initialize the DB
+            if (env.IsEnvironment("Development"))
+            { 
+                var dbInit = app.ApplicationServices.GetService<InitializeDB>();
+                dbInit.Initialize();
+            }
         }
     }
 }

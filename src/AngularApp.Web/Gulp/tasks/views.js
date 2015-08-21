@@ -5,7 +5,7 @@ var gulp    = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
 // Views task
-gulp.task('views', function () {
+gulp.task('build:views', function () {
     
     gulp.src(config.views.index)
       .pipe(gulp.dest(config.dist.root));

@@ -8,6 +8,12 @@
 
   "dependencies": {
     "AngularApp.Common": "1.0.0-*",
+    "EntityFramework": "6.1.3",
+    "Microsoft.AspNet.Identity.Core": "2.2.1",
+    "Microsoft.AspNet.Identity.EntityFramework": "2.2.1",
+    "Microsoft.AspNet.WebApi.Core": "5.2.3",
+    "Microsoft.Framework.Logging": "1.0.0-beta6-*",
+    "Microsoft.Framework.Logging.Console": "1.0.0-beta6-*",
     "ValueInjecter": "3.0.1.1"
   },
 

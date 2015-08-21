@@ -4,7 +4,7 @@ var config  = require('../config');
 var gulp    = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('images', function () {
+gulp.task('build:images', function () {
 
     return gulp.src(config.images.src)
         .pipe(plugins.changed(config.images.dest)) // Ignore unchanged files

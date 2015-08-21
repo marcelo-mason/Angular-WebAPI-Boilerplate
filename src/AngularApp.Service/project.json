@@ -9,7 +9,9 @@
   "dependencies": {
     "AngularApp.Common": "1.0.0-*",
     "AngularApp.Domain": "1.0.0-*",
-    "ValueInjecter": "3.0.1.1"
+    "ValueInjecter": "3.0.1.1",
+    "Microsoft.Framework.Logging": "1.0.0-beta6-*",
+    "Microsoft.Framework.Logging.Console": "1.0.0-beta6-*"
   },
 
   "frameworks": {

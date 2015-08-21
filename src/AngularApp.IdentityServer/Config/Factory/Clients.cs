@@ -11,20 +11,16 @@ namespace AngularApp.IdentityServer.Config.Factory
             {
                 new Client
                 {
-                    //Resource Owner Flow Client (our web UI)
-                    ClientName = "WebUI",
                     Enabled = true,
-
+                    ClientName = "WebUI",
                     ClientId = "IdentityWebUI",
                     ClientSecrets = new List<Secret>
                     {
                         new Secret("secret".Sha256())
                     },
+                    AllowAccessToAllScopes = true,
 
-                    Flow = Flows.ResourceOwner,
-                    AccessTokenType = AccessTokenType.Jwt,
-                    AccessTokenLifetime = 3600
-
+                    Flow = Flows.ResourceOwner
                 }
             };
         }

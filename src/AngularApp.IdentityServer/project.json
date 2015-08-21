@@ -9,8 +9,6 @@
   "dependencies": {
     "AngularApp.Common": "1.0.0-*",
     "AngularApp.Domain": "1.0.0-*",
-    "EntityFramework.Commands": "7.0.0-beta6-*",
-    "EntityFramework.SqlServer": "7.0.0-beta6-*",
     "IdentityModel": "1.0.0-beta4",
     "IdentityServer3": "2.0.0-rc1",
     "IdentityServer3.AspNetIdentity": "2.0.0-rc1",
@@ -18,7 +16,6 @@
     "Microsoft.AspNet.Authentication.OAuthBearer": "1.0.0-beta6-*",
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta6-*",
     "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta6-*",
-    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6-*",
     "Microsoft.AspNet.Mvc": "6.0.0-beta6-*",
     "Microsoft.AspNet.Owin": "1.0.0-beta6-*",
     "Microsoft.AspNet.Server.IIS": "1.0.0-beta6-*",
