@@ -59,10 +59,10 @@ function buildScript(watch) {
     return rebundle();
 }
 
-gulp.task('browserify', function () {
+gulp.task('build:browserify', function () {
     return buildScript(false);
 });
 
-gulp.task('watchify', function () {
+gulp.task('watch:browserify', function () {
     buildScript(!global.isProd);
 });

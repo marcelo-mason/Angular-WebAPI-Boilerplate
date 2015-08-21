@@ -5,6 +5,6 @@ var runSequence = require('run-sequence');
 
 gulp.task('build', function (cb) {
 
-    runSequence(['styles', 'libs', 'images', 'fonts', 'views'], 'browserify', cb);
+    runSequence(['build:styles', 'build:libs', 'build:images', 'build:fonts', 'build:views'], 'build:browserify', cb);
 
 });

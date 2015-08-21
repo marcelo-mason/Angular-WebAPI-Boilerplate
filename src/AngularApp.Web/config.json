@@ -1,10 +1,28 @@
 {
   "AppSettings": {
-    "SiteTitle": "AngularApp"
+    "SiteTitle": "AngularApp",
+    "IssuerUrl": "https://idsrv3.com",
+    "BaseUrl": "http://localhost:1618",
+    "AuthorizationUrl": "http://localhost:1618/core",
+    "ApiUrl": "http://localhost:1618/api"
   },
   "Data": {
     "DefaultConnection": {
-      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-AngularApp-45b950d4-d664-4fb5-9433-1248ae17a420;Trusted_Connection=True;MultipleActiveResultSets=true"
+      "ConnectionString": "Server=HOME-PC;Database=AngularApp;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  },
+  "system.diagnostics": {
+    "trace": {
+      "-autoflush": "true",
+      "-indentsize": "4",
+      "listeners": {
+        "add": {
+          "-name": "myListener",
+          "-type": "System.Diagnostics.TextWriterTraceListener",
+          "-initializeData": "Trace.log"
+        },
+        "remove": { "-name": "Default" }
+      }
     }
   }
 }

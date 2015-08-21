@@ -6,13 +6,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>11e38f74-ccc4-4304-81e9-9741f9d088cd</ProjectGuid>
-    <RootNamespace>AngularApp.Domain</RootNamespace>
+    <ProjectGuid>71b77444-5efd-416a-b905-102a051b146f</ProjectGuid>
+    <RootNamespace>AngularApp.Common</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <AssemblyName>AngularApp.Domain</AssemblyName>
+    <AssemblyName>AngularApp.Common</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>

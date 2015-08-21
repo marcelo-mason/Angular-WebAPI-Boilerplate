@@ -5,7 +5,7 @@ var config  = require('../config');
 var gulp    = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('styles', function () {
+gulp.task('build:styles', function () {
 
     return gulp.src(config.styles.src)
         .pipe(gulp.dest(config.styles.sass))

@@ -11,8 +11,8 @@ namespace AngularApp.IdentityServer.Config.Factory
             {
                 new InMemoryUser
                 {
-                    Username = "test",
-                    Password = "test",
+                    Username = "testUser",
+                    Password = "testPwd",
                     Subject = "I am the Subject"
                 }
             };

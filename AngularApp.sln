@@ -17,10 +17,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{15F2D80F-8154-40BE-B24A-1AE82C1930AD}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AngularApp.Domain", "src\AngularApp.Domain\AngularApp.Domain.xproj", "{11E38F74-CCC4-4304-81E9-9741F9D088CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{71B77444-5EFD-416A-B905-102A051B146F} = {71B77444-5EFD-416A-B905-102A051B146F}
+	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AngularApp.Service", "src\AngularApp.Service\AngularApp.Service.xproj", "{2694C7DF-41B6-41D7-AAA4-F4C3292C60A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{71B77444-5EFD-416A-B905-102A051B146F} = {71B77444-5EFD-416A-B905-102A051B146F}
+	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AngularApp.IdentityServer", "src\AngularApp.IdentityServer\AngularApp.IdentityServer.xproj", "{DC47F75A-36E4-44DB-B741-FF6E96826745}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AngularApp.Common", "src\AngularApp.Common\AngularApp.Common.xproj", "{71B77444-5EFD-416A-B905-102A051B146F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +56,10 @@ Global
 		{DC47F75A-36E4-44DB-B741-FF6E96826745}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC47F75A-36E4-44DB-B741-FF6E96826745}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC47F75A-36E4-44DB-B741-FF6E96826745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B77444-5EFD-416A-B905-102A051B146F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B77444-5EFD-416A-B905-102A051B146F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B77444-5EFD-416A-B905-102A051B146F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B77444-5EFD-416A-B905-102A051B146F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +70,6 @@ Global
 		{11E38F74-CCC4-4304-81E9-9741F9D088CD} = {18A18EC7-DC5A-4D36-9FC6-6D05015D06A8}
 		{2694C7DF-41B6-41D7-AAA4-F4C3292C60A8} = {18A18EC7-DC5A-4D36-9FC6-6D05015D06A8}
 		{DC47F75A-36E4-44DB-B741-FF6E96826745} = {18A18EC7-DC5A-4D36-9FC6-6D05015D06A8}
+		{71B77444-5EFD-416A-B905-102A051B146F} = {18A18EC7-DC5A-4D36-9FC6-6D05015D06A8}
 	EndGlobalSection
 EndGlobal

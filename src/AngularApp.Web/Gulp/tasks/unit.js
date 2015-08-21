@@ -4,7 +4,7 @@ var config  = require('../config');
 var gulp    = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
-gulp.task('unit', ['views'], function () {
+gulp.task('test:unit', ['build:views'], function () {
 
     // Nonsensical source to fall back to files listed in karma.conf.js,
     // see https://github.com/lazd/gulp-karma/issues/9

@@ -1,0 +1,165 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta6-11563": {
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging/1.0.0-beta6-11563": {
+        "dependencies": {
+          "Microsoft.Framework.DependencyInjection.Abstractions": "1.0.0-beta6-11563",
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta6-11563"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Collections.Concurrent",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Abstractions/1.0.0-beta6-11563": {
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Logging.Console/1.0.0-beta6-11563": {
+        "dependencies": {
+          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta6-11563"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Logging.Console.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Logging.Console.dll": {}
+        }
+      },
+      "ValueInjecter/3.0.1.1": {
+        "compile": {
+          "lib/net45/Omu.ValueInjecter.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Omu.ValueInjecter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta6-11563": {
+      "serviceable": true,
+      "sha512": "tMQZ77AMayVCsCQhnDFy335a4kvd+vzmWzzIMg9jOrTmUV52opZcTHoOVP4yuLwFNAeFnEVXSEmXmfCzuGRyAw==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta6-11563.nupkg",
+        "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta6-11563.nupkg.sha512",
+        "Microsoft.Framework.DependencyInjection.Abstractions.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Framework.Logging/1.0.0-beta6-11563": {
+      "serviceable": true,
+      "sha512": "NiU4JAhmjIDiTXYhrl4QUbzY+Z7aM1ZBL/O6Pa/eQnM7cpJip5xIfg2sVJmql/+vhAzPNyjVWlwJ2Y36WWVpcA==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Logging.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.xml",
+        "lib/dotnet/Microsoft.Framework.Logging.dll",
+        "lib/dotnet/Microsoft.Framework.Logging.xml",
+        "lib/net45/Microsoft.Framework.Logging.dll",
+        "lib/net45/Microsoft.Framework.Logging.xml",
+        "Microsoft.Framework.Logging.1.0.0-beta6-11563.nupkg",
+        "Microsoft.Framework.Logging.1.0.0-beta6-11563.nupkg.sha512",
+        "Microsoft.Framework.Logging.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Framework.Logging.Abstractions/1.0.0-beta6-11563": {
+      "serviceable": true,
+      "sha512": "jp6ep61Bwk2WF1is6Hqf4+Rp5u4ALKFT3mXq4zUZDNf8MCf5KwueypB0BX+ZWffhOsAQcDfZAxNX5XAVPycOrw==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Logging.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.Logging.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.Logging.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.Logging.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.Logging.Abstractions.xml",
+        "Microsoft.Framework.Logging.Abstractions.1.0.0-beta6-11563.nupkg",
+        "Microsoft.Framework.Logging.Abstractions.1.0.0-beta6-11563.nupkg.sha512",
+        "Microsoft.Framework.Logging.Abstractions.nuspec",
+        "repo.json"
+      ]
+    },
+    "Microsoft.Framework.Logging.Console/1.0.0-beta6-11563": {
+      "serviceable": true,
+      "sha512": "bRdfr6pyMPPQ5k1V140jqazVUA0iNYWWWQm+DGnkDiX00agfz2UHTDQDeGLy+gXMNg+dKV5Oz9uWMwVhOfjRPA==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.Logging.Console.dll",
+        "lib/dnx451/Microsoft.Framework.Logging.Console.xml",
+        "lib/dotnet/Microsoft.Framework.Logging.Console.dll",
+        "lib/dotnet/Microsoft.Framework.Logging.Console.xml",
+        "lib/net45/Microsoft.Framework.Logging.Console.dll",
+        "lib/net45/Microsoft.Framework.Logging.Console.xml",
+        "Microsoft.Framework.Logging.Console.1.0.0-beta6-11563.nupkg",
+        "Microsoft.Framework.Logging.Console.1.0.0-beta6-11563.nupkg.sha512",
+        "Microsoft.Framework.Logging.Console.nuspec",
+        "repo.json"
+      ]
+    },
+    "ValueInjecter/3.0.1.1": {
+      "sha512": "6CsMoC2w051C0for/UBNYIdcN4A4nHcEkHrTSQtLuXgz4gRU92VynOHlJIIK2A02SYITDB5eZHQzKakmk2sbyA==",
+      "files": [
+        "lib/net45/Omu.ValueInjecter.dll",
+        "lib/net45/Omu.ValueInjecter.pdb",
+        "lib/net45/Omu.ValueInjecter.XML",
+        "ValueInjecter.3.0.1.1.nupkg",
+        "ValueInjecter.3.0.1.1.nupkg.sha512",
+        "ValueInjecter.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "ValueInjecter >= 3.0.1.1",
+      "Microsoft.Framework.Logging >= 1.0.0-beta6-*",
+      "Microsoft.Framework.Logging.Console >= 1.0.0-beta6-*"
+    ],
+    "DNX,Version=v4.5.1": []
+  }
+}
